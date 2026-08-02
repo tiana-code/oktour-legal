@@ -3,78 +3,311 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OK Tour — Политика конфиденциальности</title>
+<title>Политика конфиденциальности — OK Tour</title>
+<meta name="description" content="Политика конфиденциальности мобильного приложения OK Tour — Buenos Aires Audio Guide: какие данные обрабатываются, зачем, как их удалить.">
+<meta name="robots" content="index, follow">
 <style>
-  :root { --ink:#1A1F2E; --muted:#4A5468; --accent:#0058BC; }
-  body { font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-         color:var(--ink); max-width:760px; margin:0 auto; padding:40px 20px; line-height:1.6; }
-  h1 { color:var(--accent); font-size:28px; }
-  h2 { margin-top:32px; font-size:20px; }
-  a { color:var(--accent); }
-  .muted { color:var(--muted); font-size:14px; }
-  ul { padding-left:20px; }
+  :root {
+    --accent:#0058BC; --accent-soft:#4A9EFF;
+    --ink:#141A26; --body:#2C3546; --muted:#5B6579;
+    --line:#E2E7EF; --bg:#FFFFFF; --surface:#F6F8FC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent:#5FA8FF; --accent-soft:#8CC2FF;
+      --ink:#F2F5FA; --body:#C8D0DE; --muted:#8D97A8;
+      --line:#2A3140; --bg:#0F131B; --surface:#161C27;
+    }
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body {
+    margin:0; background:var(--bg); color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.65;
+  }
+  .wrap { max-width:780px; margin:0 auto; padding:0 24px 80px; }
+  header.site {
+    border-bottom:1px solid var(--line); background:var(--surface);
+    padding:20px 0; margin-bottom:48px;
+  }
+  header.site .wrap { padding-bottom:0; display:flex; flex-wrap:wrap; gap:16px;
+    align-items:baseline; justify-content:space-between; }
+  .brand { font-size:19px; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+  .brand span { color:var(--accent); }
+  nav.site a { font-size:15px; margin-left:20px; }
+  nav.site a:first-child { margin-left:0; }
+  h1 { color:var(--ink); font-size:34px; line-height:1.2; letter-spacing:-.02em; margin:0 0 12px; }
+  h2 { color:var(--ink); font-size:21px; line-height:1.3; letter-spacing:-.01em;
+       margin:44px 0 12px; scroll-margin-top:24px; }
+  h2 .num { color:var(--accent); font-variant-numeric:tabular-nums; margin-right:8px; }
+  p, li { margin:0 0 14px; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; }
+  a:hover { border-bottom-color:currentColor; }
+  ul { padding-left:22px; margin:0 0 16px; }
+  li::marker { color:var(--accent-soft); }
+  strong { color:var(--ink); font-weight:600; }
+  .lede { font-size:18px; color:var(--body); }
+  .meta {
+    display:flex; flex-wrap:wrap; gap:6px 28px; padding:16px 20px; margin:0 0 36px;
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    font-size:14px; color:var(--muted);
+  }
+  .meta b { color:var(--ink); font-weight:600; }
+  .toc { background:var(--surface); border:1px solid var(--line); border-radius:12px;
+         padding:20px 24px; margin:0 0 8px; }
+  .toc h3 { margin:0 0 10px; font-size:13px; text-transform:uppercase;
+            letter-spacing:.08em; color:var(--muted); font-weight:600; }
+  .toc ol { margin:0; padding-left:20px; columns:2; column-gap:32px; font-size:15px; }
+  .toc li { margin:0 0 6px; break-inside:avoid; }
+  .table-scroll { overflow-x:auto; margin:0 0 18px; -webkit-overflow-scrolling:touch; }
+  table { border-collapse:collapse; width:100%; font-size:15px; min-width:520px; }
+  th, td { text-align:left; vertical-align:top; padding:11px 14px; border-bottom:1px solid var(--line); }
+  th { color:var(--ink); font-weight:600; font-size:13px; text-transform:uppercase;
+       letter-spacing:.05em; background:var(--surface); }
+  .callout {
+    border-left:3px solid var(--accent); background:var(--surface);
+    border-radius:0 10px 10px 0; padding:16px 20px; margin:0 0 20px;
+  }
+  .callout p:last-child { margin-bottom:0; }
+  footer.site { border-top:1px solid var(--line); margin-top:56px; padding-top:24px;
+                font-size:14px; color:var(--muted); }
+  @media (max-width:640px) {
+    body { font-size:16px; }
+    h1 { font-size:27px; }
+    .toc ol { columns:1; }
+    .wrap { padding:0 18px 56px; }
+  }
+  @media print {
+    header.site, nav.site, .toc { display:none; }
+    body { font-size:11pt; color:#000; background:#fff; }
+    a { color:#000; }
+  }
 </style>
 </head>
 <body>
-<h1>Политика конфиденциальности — OK Tour</h1>
-<p class="muted">Приложение: OK Tour — Buenos Aires Audio Guide. Последнее обновление: 2026-06-23.
-Контакт: <a href="mailto:hello@oktour.app">hello@oktour.app</a></p>
 
-<p>OK Tour («мы») уважает вашу приватность. Эта политика описывает, какие данные мы
-обрабатываем при использовании мобильного приложения OK Tour, зачем и как.</p>
+<header class="site">
+  <div class="wrap">
+    <div class="brand">OK<span> Tour</span></div>
+    <nav class="site">
+      <a href="../privacy/" aria-current="page">Конфиденциальность</a>
+      <a href="../delete-account/">Удаление аккаунта</a>
+    </nav>
+  </div>
+</header>
 
-<h2>1. Какие данные мы обрабатываем</h2>
+<main class="wrap">
+
+<h1>Политика конфиденциальности</h1>
+<p class="lede">Документ описывает, какие персональные данные обрабатывает мобильное приложение
+<strong>OK Tour — Buenos Aires Audio Guide</strong>, на каком основании, как долго они хранятся
+и как их удалить.</p>
+
+<div class="meta">
+  <span>Редакция <b>1.1</b></span>
+  <span>Вступает в силу <b>2 августа 2026 г.</b></span>
+  <span>Платформы <b>Android, iOS</b></span>
+</div>
+
+<nav class="toc" aria-label="Содержание">
+  <h3>Содержание</h3>
+  <ol>
+    <li><a href="#operator">Кто обрабатывает данные</a></li>
+    <li><a href="#data">Категории данных и цели</a></li>
+    <li><a href="#location">Геолокация</a></li>
+    <li><a href="#basis">Правовые основания</a></li>
+    <li><a href="#processors">Обработчики и передача</a></li>
+    <li><a href="#retention">Сроки хранения</a></li>
+    <li><a href="#deletion">Удаление аккаунта</a></li>
+    <li><a href="#rights">Ваши права</a></li>
+    <li><a href="#security">Безопасность</a></li>
+    <li><a href="#children">Дети</a></li>
+    <li><a href="#law">Применимое право</a></li>
+    <li><a href="#changes">Изменения политики</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ol>
+</nav>
+
+<h2 id="operator"><span class="num">1.</span>Кто обрабатывает данные</h2>
+<p>Оператором персональных данных выступает разработчик приложения — <strong>okTour</strong>
+(индивидуальный разработчик, Буэнос-Айрес, Аргентина). Далее — «мы».</p>
+<p>Политика распространяется на мобильное приложение OK Tour для Android и iOS и на настоящий
+сайт. Продолжая пользоваться приложением, вы подтверждаете, что ознакомились с этим документом.</p>
+
+<h2 id="data"><span class="num">2.</span>Категории данных и цели обработки</h2>
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Категория</th><th>Что именно</th><th>Зачем</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Учётная запись</td>
+      <td>Адрес электронной почты, отображаемое имя (регистрация по email либо через Google / Apple)</td>
+      <td>Вход в приложение, восстановление доступа, синхронизация покупок между устройствами</td>
+    </tr>
+    <tr>
+      <td>Пользовательский контент</td>
+      <td>Заметки, избранные маршруты и точки, прогресс прохождения экскурсий</td>
+      <td>Сохранение вашего прогресса и его доступность на других ваших устройствах</td>
+    </tr>
+    <tr>
+      <td>Данные о подписке</td>
+      <td>Статус подписки Premium, идентификатор покупки от App Store / Google Play</td>
+      <td>Предоставление оплаченного доступа и его восстановление</td>
+    </tr>
+    <tr>
+      <td>Геолокация</td>
+      <td>Координаты устройства во время активной экскурсии — см. раздел 3</td>
+      <td>Автоматический запуск аудиофрагмента при подходе к точке маршрута</td>
+    </tr>
+    <tr>
+      <td>Технические данные</td>
+      <td>Обезличенные отчёты о сбоях и ошибках: модель устройства, версия ОС и приложения, стек ошибки</td>
+      <td>Диагностика и устранение неисправностей, стабильность приложения</td>
+    </tr>
+    <tr>
+      <td>Локальные настройки</td>
+      <td>Язык, тема оформления, громкость, кэш аудио и карт</td>
+      <td>Работа приложения; хранятся только на устройстве и не передаются нам</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout">
+  <p><strong>Мы не занимаемся рекламой и трекингом.</strong> В приложении нет рекламных SDK.
+  Мы не отслеживаем вас между приложениями и сайтами, не формируем рекламные профили,
+  не продаём и не передаём ваши данные третьим лицам в маркетинговых целях.</p>
+</div>
+
+<h2 id="location"><span class="num">3.</span>Геолокация: как именно она используется</h2>
+<p>Доступ к геолокации запрашивается <strong>только при запуске экскурсии</strong> и используется,
+пока экскурсия активна, в том числе при выключенном экране — чтобы аудиорассказ включался
+в нужной точке маршрута.</p>
 <ul>
-  <li><b>Аккаунт</b> — email и имя (при регистрации через email, Google или Apple). Нужны для входа и восстановления доступа.</li>
-  <li><b>Геолокация</b> — используется <b>только во время активной экскурсии</b>, чтобы автоматически
-      воспроизводить аудио при подходе к точке маршрута. Координаты обрабатываются на устройстве,
-      <b>не сохраняются на сервере и не передаются третьим лицам</b>.</li>
-  <li><b>Подписки</b> — статус покупки Premium (через Apple App Store / Google Play и сервис RevenueCat)
-      для подтверждения доступа. Платёжные данные мы не получаем и не храним.</li>
-  <li><b>Заметки и избранное</b> — создаваемый вами контент, привязанный к вашему аккаунту.</li>
-  <li><b>Локальные настройки</b> — язык, тема, прогресс — хранятся на устройстве.</li>
-  <li><b>Диагностика сбоев</b> — анонимные отчёты об ошибках (Sentry) без персональных данных и без координат.</li>
+  <li>Координаты обрабатываются <strong>на самом устройстве</strong>.</li>
+  <li>Мы <strong>не сохраняем их на сервере</strong>, не ведём историю ваших перемещений
+      и не передаём координаты третьим лицам.</li>
+  <li>Координаты не попадают в отчёты о сбоях.</li>
+  <li>Разрешение можно отозвать в любой момент в настройках операционной системы; экскурсии
+      останутся доступны — аудиофрагменты потребуется запускать вручную.</li>
 </ul>
 
-<h2>2. Что мы НЕ делаем</h2>
+<h2 id="basis"><span class="num">4.</span>Правовые основания обработки</h2>
+<p>Для пользователей, на которых распространяется законодательство ЕС (GDPR), основаниями
+обработки являются:</p>
 <ul>
-  <li>Не отслеживаем вас между приложениями и сайтами.</li>
-  <li>Не продаём и не передаём ваши данные третьим лицам в рекламных целях.</li>
-  <li>Не используем сторонние рекламные SDK.</li>
+  <li><strong>Исполнение договора</strong> (ст. 6(1)(b)) — создание учётной записи, предоставление
+      доступа к экскурсиям и подписке, сохранение прогресса.</li>
+  <li><strong>Согласие</strong> (ст. 6(1)(a)) — доступ к геолокации; отзывается в настройках устройства.</li>
+  <li><strong>Законный интерес</strong> (ст. 6(1)(f)) — обезличенная диагностика сбоев и защита
+      сервиса от злоупотреблений.</li>
 </ul>
 
-<h2>3. Обработчики данных (subprocessors)</h2>
+<h2 id="processors"><span class="num">5.</span>Обработчики и трансграничная передача</h2>
+<p>Мы привлекаем ограниченный круг поставщиков услуг, действующих по нашему поручению
+и связанных договорными обязательствами по защите данных:</p>
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Поставщик</th><th>Назначение</th><th>Данные</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Supabase</td><td>Хранение учётных записей и пользовательского контента</td><td>Email, имя, заметки, избранное, прогресс</td></tr>
+    <tr><td>RevenueCat</td><td>Управление подписками и восстановление покупок</td><td>Идентификатор пользователя, статус подписки</td></tr>
+    <tr><td>Apple App Store · Google Play</td><td>Приём платежей и подтверждение покупок</td><td>Обрабатываются платформой; платёжные реквизиты нам не передаются</td></tr>
+    <tr><td>Sentry</td><td>Мониторинг сбоев</td><td>Обезличенные технические отчёты об ошибках</td></tr>
+    <tr><td>OpenStreetMap · CARTO</td><td>Картографические тайлы</td><td>Технические запросы к тайлам без привязки к аккаунту</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Серверы поставщиков могут находиться за пределами вашей страны, в том числе в США и ЕС.
+Передача осуществляется на основании стандартных договорных условий соответствующих
+поставщиков.</p>
+
+<h2 id="retention"><span class="num">6.</span>Сроки хранения</h2>
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Данные</th><th>Срок</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Учётная запись и пользовательский контент</td><td>Пока существует аккаунт</td></tr>
+    <tr><td>Резервные копии после удаления аккаунта</td><td>Не более 30 дней</td></tr>
+    <tr><td>Отчёты о сбоях</td><td>До 90 дней</td></tr>
+    <tr><td>Геолокация</td><td>Не хранится: обрабатывается на устройстве в моменте</td></tr>
+    <tr><td>Записи о покупках</td><td>Хранятся платформой Apple / Google по их правилам</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="deletion"><span class="num">7.</span>Удаление аккаунта и данных</h2>
+<p>Удалить аккаунт можно самостоятельно в приложении: <strong>Профиль → Удалить аккаунт</strong>.
+Вместе с ним удаляются профиль, заметки, избранное и история прохождения. Действие необратимо.</p>
+<p>Если приложение уже удалено с устройства, воспользуйтесь процедурой по запросу —
+подробности на странице <a href="../delete-account/">«Удаление аккаунта»</a>.</p>
+
+<h2 id="rights"><span class="num">8.</span>Ваши права</h2>
+<p>Вы вправе запросить доступ к своим данным, их исправление, удаление или перенос,
+ограничить обработку, а также отозвать ранее данное согласие. Пользователи ЕС дополнительно
+вправе подать жалобу в надзорный орган по защите данных своей страны.</p>
+<p>Мы не продаём персональные данные и не передаём их для целевой рекламы — в терминах
+законодательства Калифорнии (CCPA/CPRA) продажа и «sharing» данных не осуществляются.</p>
+<p>Запросы направляйте по контактам из раздела 12. Ответ предоставляется в течение
+30 календарных дней.</p>
+
+<h2 id="security"><span class="num">9.</span>Безопасность</h2>
 <ul>
-  <li><b>Supabase</b> — хранение аккаунта, заметок, избранного (серверы США/ЕС).</li>
-  <li><b>RevenueCat / Apple / Google</b> — обработка подписок и покупок.</li>
-  <li><b>Sentry</b> — диагностика сбоев (без PII).</li>
+  <li>Весь обмен данными между приложением и серверами идёт по протоколу HTTPS/TLS;
+      незашифрованный трафик в приложении запрещён на уровне конфигурации.</li>
+  <li>Доступ к данным разграничен на уровне базы данных построчными политиками доступа:
+      пользователь видит только собственные записи.</li>
+  <li>Токены доступа хранятся в защищённом хранилище операционной системы
+      (Keychain на iOS, Keystore на Android).</li>
+</ul>
+<p>Ни один способ передачи и хранения данных не обеспечивает абсолютной защиты, однако мы
+принимаем разумные технические и организационные меры для их сохранности.</p>
+
+<h2 id="children"><span class="num">10.</span>Дети</h2>
+<p>Приложение не предназначено для лиц младше 13 лет и не собирает осознанно их персональные
+данные. Если вам стало известно, что ребёнок предоставил нам данные, свяжитесь с нами —
+мы удалим их.</p>
+
+<h2 id="law"><span class="num">11.</span>Применимое право и надзорный орган</h2>
+<p>Приложение разрабатывается в Аргентине и ориентировано на русскоязычных путешественников,
+находящихся в Буэнос-Айресе. К обработке персональных данных применяется законодательство
+Аргентинской Республики — <strong>Закон № 25.326 «О защите персональных данных»</strong>
+и подзаконные акты <strong>Агентства по доступу к публичной информации (AAIP)</strong>,
+которое выступает надзорным органом. Субъект данных вправе обратиться в AAIP с жалобой:
+<a href="https://www.argentina.gob.ar/aaip/datospersonales">argentina.gob.ar/aaip/datospersonales</a>.</p>
+<p>Если вы находитесь на территории Европейской экономической зоны, к обработке дополнительно
+применяется Общий регламент по защите данных (GDPR) — см. раздел 4; вы также вправе обратиться
+в надзорный орган своей страны. Для резидентов Калифорнии применяются положения CCPA/CPRA,
+описанные в разделе 8.</p>
+
+<h2 id="changes"><span class="num">12.</span>Изменения политики</h2>
+<p>Мы можем обновлять эту политику по мере развития приложения. Актуальная редакция всегда
+доступна по адресу
+<a href="https://tiana-code.github.io/oktour-legal/privacy/">tiana-code.github.io/oktour-legal/privacy/</a>
+с указанием номера редакции и даты вступления в силу. О существенных изменениях мы сообщим
+в приложении. Документ составлен на русском языке — языке интерфейса приложения; при появлении
+переводов преимущественную силу имеет русская версия.</p>
+
+<h2 id="contact"><span class="num">13.</span>Контакты</h2>
+<p>Вопросы о приватности и запросы по правам субъекта данных:</p>
+<ul>
+  <li>Электронная почта: <a href="mailto:hello@oktour.app">hello@oktour.app</a></li>
+  <li>Telegram: <a href="https://t.me/ContextArgentina">t.me/ContextArgentina</a></li>
 </ul>
 
-<h2>4. Хранение и удаление</h2>
-<ul>
-  <li>Данные аккаунта хранятся, пока существует аккаунт.</li>
-  <li>Вы можете удалить аккаунт в приложении: <b>Профиль → Удалить аккаунт</b>. Удаляются профиль,
-      заметки, избранное, история. Действие необратимо.</li>
-  <li>Резервные копии стираются в течение 30 дней после удаления.</li>
-</ul>
+<footer class="site">
+  <p>OK Tour — Buenos Aires Audio Guide · Редакция 1.1 от 2 августа 2026 г.<br>
+  <a href="../privacy/">Политика конфиденциальности</a> ·
+  <a href="../delete-account/">Удаление аккаунта</a></p>
+</footer>
 
-<h2>5. Ваши права</h2>
-<p>Вы вправе запросить доступ к своим данным, их исправление или удаление. Для запросов пишите на
-<a href="mailto:hello@oktour.app">hello@oktour.app</a>.</p>
-
-<h2>6. Дети</h2>
-<p>Приложение не предназначено для детей младше 13 лет и не собирает осознанно их данные.</p>
-
-<h2>7. Изменения</h2>
-<p>Мы можем обновлять эту политику. Актуальная версия всегда доступна по адресу tiana-code.github.io/oktour-legal/privacy/
-с указанием даты обновления.</p>
-
-<h2>8. Контакт</h2>
-<p>По вопросам приватности: <a href="mailto:hello@oktour.app">hello@oktour.app</a></p>
-
-<hr>
-<p class="muted">EN / ES версии: при необходимости добавить переводы этого документа.
-Перед публичным релизом — сверить с юридическими требованиями вашей юрисдикции
-(наименование правообладателя, страна обработки, GDPR/CCPA при необходимости).</p>
+</main>
 </body>
 </html>
