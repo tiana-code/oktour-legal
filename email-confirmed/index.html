@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Адрес подтверждён — OK Tour</title>
+<meta name="description" content="Электронная почта подтверждена. Вернитесь в приложение OK Tour и войдите под своим адресом.">
+<meta name="robots" content="noindex, follow">
+<style>
+  :root {
+    --accent:#0058BC; --accent-soft:#4A9EFF;
+    --ink:#141A26; --body:#2C3546; --muted:#5B6579;
+    --line:#E2E7EF; --bg:#FFFFFF; --surface:#F6F8FC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent:#5FA8FF; --accent-soft:#8CC2FF;
+      --ink:#F2F5FA; --body:#C8D0DE; --muted:#8D97A8;
+      --line:#2A3140; --bg:#0F131B; --surface:#161C27;
+    }
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body {
+    margin:0; background:var(--bg); color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px; line-height:1.65;
+  }
+  .wrap { max-width:620px; margin:0 auto; padding:0 24px 80px; }
+  header.site {
+    border-bottom:1px solid var(--line); background:var(--surface);
+    padding:20px 0; margin-bottom:56px;
+  }
+  header.site .wrap { padding-bottom:0; }
+  .brand { font-size:19px; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+  .brand span { color:var(--accent); }
+  .mark {
+    width:64px; height:64px; border-radius:50%; background:var(--accent);
+    display:flex; align-items:center; justify-content:center; margin:0 0 24px;
+  }
+  .mark svg { width:32px; height:32px; }
+  h1 { color:var(--ink); font-size:32px; line-height:1.2; letter-spacing:-.02em; margin:0 0 14px; }
+  p { margin:0 0 16px; }
+  .lede { font-size:18px; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; }
+  a:hover { border-bottom-color:currentColor; }
+  strong { color:var(--ink); font-weight:600; }
+  .callout {
+    border-left:3px solid var(--accent); background:var(--surface);
+    border-radius:0 10px 10px 0; padding:16px 20px; margin:32px 0 0;
+    font-size:15px;
+  }
+  .callout p:last-child { margin-bottom:0; }
+  footer.site { border-top:1px solid var(--line); margin-top:56px; padding-top:24px;
+                font-size:14px; color:var(--muted); }
+  @media (max-width:640px) {
+    body { font-size:16px; }
+    h1 { font-size:26px; }
+    .wrap { padding:0 18px 56px; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap"><div class="brand">OK<span> Tour</span></div></div>
+</header>
+
+<main class="wrap">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6"
+         stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+  </div>
+
+  <h1>Адрес подтверждён</h1>
+
+  <p class="lede">Почта подтверждена — учётная запись готова.</p>
+
+  <p>Вернитесь в приложение <strong>OK Tour</strong> и войдите тем же адресом
+  и паролем, которые указывали при регистрации. Эту страницу можно закрыть.</p>
+
+  <div class="callout">
+    <p>Если приложение всё равно пишет, что адрес не подтверждён, — выйдите из
+    учётной записи и войдите заново: признак подтверждения попадает в сессию
+    только при входе.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    OK Tour · аудиопрогулки по Буэнос-Айресу ·
+    <a href="mailto:kuol74@gmail.com">kuol74@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>
